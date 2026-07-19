@@ -1,0 +1,33 @@
+# Python caching
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Django local database & settings
+db.sqlite3
+db.sqlite3-journal
+local_settings.py
+
+# Node dependencies
+node_modules/
+
+# Production builds
+dist/
+build/
+
+# IDE and system files
+.idea/
+.vscode/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

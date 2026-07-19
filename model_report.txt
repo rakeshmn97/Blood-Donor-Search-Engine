@@ -1,0 +1,52 @@
+Loaded dataset: 2000 rows, 16 columns
+
+============================================================
+PART 1: UNSUPERVISED LEARNING — Geo-clustering donors
+============================================================
+
+Formed 5 geographic donor zones using K-Means.
+geo_cluster
+0    454
+1    293
+2    319
+3    493
+4    441
+Saved geo_clusters_plot.png and elbow_plot.png
+
+============================================================
+PART 2: SUPERVISED LEARNING — Predict emergency response
+============================================================
+
+Features used: ['age', 'gender_enc', 'blood_group_enc', 'zone_enc', 'geo_cluster', 'total_donations', 'days_since_last_donation', 'donation_frequency_days', 'availability_enc', 'eligible_to_donate']
+Target distribution:
+responded_last_emergency
+1    1414
+0     586
+
+--- Logistic Regression (baseline) ---
+Accuracy:  0.713
+Precision: 0.728
+Recall:    0.947
+F1-score:  0.823
+ROC-AUC:   0.699
+
+--- Random Forest (tuned) ---
+Best params: {'max_depth': None, 'min_samples_leaf': 1, 'n_estimators': 200}
+Accuracy:  0.718
+Precision: 0.741
+Recall:    0.922
+F1-score:  0.822
+ROC-AUC:   0.656
+
+Full classification report (Random Forest):
+              precision    recall  f1-score   support
+
+           0       0.54      0.22      0.32       117
+           1       0.74      0.92      0.82       283
+
+    accuracy                           0.72       400
+   macro avg       0.64      0.57      0.57       400
+weighted avg       0.68      0.72      0.67       400
+
+
+Saved confusion_matrix.png and feature_importance.png
